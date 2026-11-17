@@ -15,14 +15,14 @@ class stack:
         new_node.next=self.top
         self.top=new_node
     
-    # def pop(self):
-    #     if self.isempty():
-    #         print("Stack Empty")
-    #     else:
-    #         temp=self.top
-    #         print("Poped Element: ",temp.data)
-    #         self.top=self.top.next
-    #         temp=None
+    def pop(self):
+        if self.isempty():
+            print("Stack Empty")
+        else:
+            temp=self.top
+            print("Poped Element: ",temp.data)
+            self.top=self.top.next
+            temp=None
     
     # def reverse(self):
     #     temp=self.top
@@ -77,9 +77,13 @@ def reverse_queue(q1):
         st1.push(Node(q1.dequeue()))
 
     st1.print()
+def reverse_stack(s1):
+    q1=Queue()
+    while not s1.isempty():
+        q1.enqueue(Node(s1.pop()))
+    q1.print()
 
 
-st=stack()
 lq=Queue()
 lq.enqueue(Node(15))
 lq.enqueue(Node(24))
@@ -98,13 +102,14 @@ reverse_queue(lq)
 # lq.print()
 
 # st=stack()
-# st1=stack()
-# st.push(Node(10))
-# st.push(Node(20))
-# st.push(Node(30))
-# st.push(Node(40))
-# st.push(Node(50))
-# #st.print()
+st=stack()
+st.push(Node(10))
+st.push(Node(20))
+st.push(Node(30))
+st.push(Node(40))
+st.push(Node(50))
+st.print()
+reverse_stack(st)
 # st.pop()
 # #st.print()
 # st.reverse()
